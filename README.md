@@ -34,3 +34,26 @@ O objetivo do sistema é automatizar e simplificar o gerenciamento de competiç�
 ## Contexto
 O sistema visa atender às necessidades de organização e acompanhamento de competições esportivas, oferecendo uma plataforma unificada que permite um gerenciamento eficiente e uma experiência completa para todos os envolvidos. O foco está em proporcionar clareza e facilidade de uso em cada etapa, desde o gerenciamento da competição até o acompanhamento por parte dos torcedores.
 
+## Histórias de Usuário
+
+### 1. Administrador de Liga
+- **História 1**: Como **administrador de liga**, eu quero poder criar, editar e excluir ligas no sistema para gerenciar de forma eficaz todas as competições disponíveis.
+- **História 2**: Como **administrador de liga**, eu quero ser capaz de organizar as partidas da liga, incluindo a definição de datas, horários e locais para que o cronograma das competições seja claro e acessível.
+- **História 3**: Como **administrador de liga**, eu quero visualizar e gerenciar as tabelas de pontuação das ligas para acompanhar o desempenho das equipes e atualizá-las conforme necessário.
+
+### 2. Gestor de Equipes
+- **História 1**: Como **gestor de equipes**, eu quero cadastrar novas equipes no sistema para que elas possam participar das competições.
+- **História 2**: Como **gestor de equipes**, eu quero associar atletas à minha equipe para que possam participar oficialmente das competições.
+- **História 3**: Como **gestor de equipes**, eu quero cadastrar informações detalhadas sobre a equipe, como estádio e insumos, para garantir que todos os dados necessários estejam disponíveis no sistema.
+- **História 4**: Como **gestor de equipes**, eu quero visualizar e editar os dados das equipes já cadastradas para que as informações estejam sempre atualizadas e corretas.
+
+### 3. Atleta
+- **História 1**: Como **atleta**, eu quero poder cadastrar e atualizar meus dados pessoais (nome, identificador, altura, data de nascimento, sexo) para que meu perfil esteja completo e correto no sistema.
+- **História 2**: Como **atleta**, eu quero visualizar as competições e partidas em que estou registrado para acompanhar minha programação e desempenho.
+
+### 4. Torcedor
+- **História 1**: Como **torcedor**, eu quero visualizar as tabelas de pontuação das ligas para acompanhar o desempenho das equipes.
+- **História 2**: Como **torcedor**, eu quero ver os placares das partidas já concluídas para acompanhar os resultados das competições.
+- **História 3**: Como **torcedor**, eu quero ter a possibilidade de comprar ingressos para partidas futuras para que eu possa assistir aos jogos presencialmente.
+
+
