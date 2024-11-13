@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+actor Usuário as user
+actor Torcedor as t
+actor Administrador as ad
+actor Gestor as gestor
+actor Atleta as atl
+
+package LigaPro{
+  usecase "Gerênciar Cadastro" as atl1
+  usecase "Visualizar Competição" as atl2
+  usecase "Fazer Login" as user1
+  usecase "Alterar Senha" as user2
+  usecase "Visualizar Tabela" as t1
+  usecase "Visualizar Partidas" as t2
+  usecase "Comprar Ingresso" as t3
+  usecase "Gerenciar Equipes" as gestor1
+  usecase "Gerenciar Ligas" as ad1
+  usecase "Gerenciar Partidas" as ad2
+  usecase "Gerenciar Tabelas" as ad3
+
+
+(user1) .> (user2) : extend
+(t2) .> (t1) : extend
+(ad1) .> (ad2) : extend
+}
+atl --> atl1
+atl --> atl2
+user --> user1
+t --> t1
+t --> t2
+t --> t3
+gestor --> gestor1
+ad --> ad1
+ad --> ad2
+ad --> ad3
+
+atl <|-- user
+gestor <|-- user
+ad <|-- user
+t <|-- user
+@enduml
