@@ -14,6 +14,7 @@ package LigaPro{
   usecase "Visualizar Tabela" as t1
   usecase "Visualizar Partidas" as t2
   usecase "Comprar Ingresso" as t3
+  usecase "Apostar" as t4
   usecase "Gerenciar Equipes" as gestor1
   usecase "Gerenciar Ligas" as ad1
   usecase "Gerenciar Partidas" as ad2
@@ -30,11 +31,17 @@ user --> user1
 t --> t1
 t --> t2
 t --> t3
+t --> t4
 gestor --> gestor1
 ad --> ad1
 ad --> ad2
 ad --> ad3
 
+atl <|-- user
+gestor <|-- user
+ad <|-- user
+t <|-- user
+@enduml
 atl <|-- user
 gestor <|-- user
 ad <|-- user
