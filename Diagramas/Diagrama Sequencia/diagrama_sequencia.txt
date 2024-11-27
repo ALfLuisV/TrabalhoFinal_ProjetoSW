@@ -1,0 +1,84 @@
+@startuml
+
+actor       Torcedor as t
+actor gestor as g
+actor Jogador as j
+
+participant SistemaDeCompras as sis
+participant SistemaDePagamentos as pay
+participant SistemaDeNotificacao as not
+participant SistemaDeApostas as ap
+
+database    BancoDeDados as bd
+
+t -> sis: comprarIngresso()
+activate t
+deactivate t
+activate sis
+sis -> bd: verificarDisponibilidade
+activate bd
+bd --> sis: ingressosDisponiveis
+deactivate bd
+sis --> t: disponibilidade
+activate t
+t -> sis: realizarPagamento()
+deactivate t
+sis -> pay: validarPagamento()
+deactivate sis
+activate pay
+pay --> sis: pagamentoConfirmado()
+deactivate pay
+activate sis
+sis -> bd: registrarVenda()
+activate bd
+deactivate bd
+sis --> t: confirmarCompra()
+sis -> t: gerarIngresso()
+deactivate sis
+
+
+g -> sis: buscarJogadores()
+activate g
+deactivate g
+activate sis
+sis -> bd: verificarJogadoresDisponiveis()
+activate bd
+bd --> sis: jogadoresDisponiveis
+deactivate bd
+sis --> g: jogadoresDisponiveis
+deactivate sis
+activate g
+g -> sis:[jogador]associarJogadorAEquipe
+deactivate g
+activate sis
+sis -> bd: registrarAssociacao()
+activate bd
+bd --> sis: associacaoConfirmada
+deactivate bd
+sis --> g: associacaoConfirmada
+sis -> not: notificarJogador()
+deactivate sis
+activate not
+not --> j: notificarAssociacao()
+deactivate not
+
+
+t -> ap: realizarAposta()
+activate t
+deactivate t
+activate ap
+ap -> bd: consultarPlacares()
+activate bd
+bd --> ap: placaresAtuais
+deactivate bd
+ap-> pay: pagarCliente()
+activate pay
+pay --> t: confirmacaoDePagamento
+deactivate pay
+ap -> not: notificarCliente()
+deactivate ap
+activate not
+not --> t: notificacaoDeResultado
+deactivate not
+
+@enduml
