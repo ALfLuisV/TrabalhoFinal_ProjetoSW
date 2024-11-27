@@ -55,9 +55,15 @@ O sistema visa atender às necessidades de organização e acompanhamento de com
 - **História 1**: Como **torcedor**, eu quero visualizar as tabelas de pontuação das ligas para acompanhar o desempenho das equipes.
 - **História 2**: Como **torcedor**, eu quero ver os placares das partidas já concluídas para acompanhar os resultados das competições.
 - **História 3**: Como **torcedor**, eu quero ter a possibilidade de comprar ingressos para partidas futuras para que eu possa assistir aos jogos presencialmente.
+- **História 4**: Como torcedor, gostaria de poder realizar apostas na plataforma, para assim que eu possa ter a chance de ganhar dinheiro.
 
 ## Digrama de casos de uso
 ![DiagramaDeCasosdeUso](Diagramas/CasosDeUso/Diagrama_casos_de_uso.png)
+
+## Diagrama de Sequencia
+Diagrama implementando os casos de uso de compra de ingresso, associação de jogador a equipe, e aposta na plataforma
+![diagramaDESequencia](Diagramas/DiagramaSequencia/diagrama_sequencia.png)
+
 
 
 
