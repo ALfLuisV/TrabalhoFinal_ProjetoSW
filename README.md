@@ -58,7 +58,7 @@ O sistema visa atender às necessidades de organização e acompanhamento de com
 - **História 4**: Como torcedor, gostaria de poder realizar apostas na plataforma, para assim que eu possa ter a chance de ganhar dinheiro.
 
 ## Digrama de casos de uso
-![DiagramaDeCasosdeUso](Diagramas/CasosDeUso/Diagrama_casos_de_uso.png)
+![DiagramaDeCasosdeUso](Diagramas/CasosDeUso/Diagrama_casosde_uso.png)
 
 ## Diagrama de Sequencia
 Diagrama implementando os casos de uso de compra de ingresso, associação de jogador a equipe, e aposta na plataforma
