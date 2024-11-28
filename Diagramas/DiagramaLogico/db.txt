@@ -1,0 +1,145 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table atlete {
+  id_atleta integer [primary key]
+  name varchar(70)
+  cpf varchar(15)
+  sexo char
+  bDate date
+  onATeam booelan
+  team integer
+  height float
+}
+
+Table team {
+  team_id integer [primary key]
+  name varchar
+}
+
+Table championship {
+  champ_id integer [primary key]
+  startDate date
+  endDate date
+  champName varchar(70)
+  modality varchar(30)
+  winner integer
+}
+
+Table team_championship{
+  tcId integer [primary key]
+  teamId integer
+  championshipId integer
+  points integer
+  victorys integer
+  draws integer
+  loses integer
+}
+
+
+Table match {
+match_id integer [primary key]
+championship integer
+team1 integer
+team2 integer
+team1_points integer
+team2_poins integer
+matchDate dateTime
+matchLocal int
+status varchar(15)
+}
+
+Table stadium {
+  id_stadium integer [primary key]
+  name varchar(40)
+  idteam integer
+  city varchar(30)
+}
+
+Table ticket {
+  id_ticket integer [primary key]
+  match integer
+  ticketCode integer
+  user integer
+}
+
+Table users {
+  iduser integer [primary key]
+  name varchar(60)
+  bDate datetime
+  cpf varchar(15)
+  email varchar(128)
+  senha varchar(50)
+}
+
+Table bet {
+  bet_id integer [primary key]
+  match_id integer
+  odd float
+}
+
+
+Table user_bet{
+  userBetId integer [primary key]
+  betID integer
+  userId integer
+  betValue integer
+  betDate datetime
+  green boolean
+}
+
+Table user_championship{
+  idUserChamp integer
+  id_champ integer
+  id_user integer
+}
+
+Table payment{
+  paymentId integer
+  value float 
+  date datetime
+  status boolean
+}
+
+Table bet_payment{
+  Id integer
+  paymentId integer
+  betId integer
+}
+
+Table user_team {
+  id integer
+  id_user integer
+  id_team integer
+}
+
+Table performance {
+  id_performance integer
+  id_atleta integer
+  id_match integer
+  points integer
+  cards integer
+  minutesPlayed integer
+}
+
+
+Ref: performance.id_atleta > atlete.id_atleta
+Ref: performance.id_match > match.match_id
+Ref: user_team.id_team > team.team_id
+Ref: user_team.id_user > users.iduser
+Ref: team_championship.teamId > team.team_id // many-to-one
+Ref: team_championship.championshipId > championship.champ_id // many-to-one
+Ref: atlete.team > team.team_id //many-to-one
+Ref: championship.winner > team.team_id
+Ref: match.team1 > team.team_id //one-to-one
+Ref: match.team2 > team.team_id //one-to-many
+Ref: match.matchLocal > stadium.id_stadium //one-to-many
+Ref: stadium.idteam > team.team_id //one-to-one
+Ref: ticket.match > match.match_id //many-to-one
+Ref: ticket.user > users.iduser // many-to-one
+Ref: user_bet.userId > users.iduser //many-to-one
+Ref: user_bet.betID > bet.bet_id //many-to-one
+Ref: user_championship.id_champ > championship.champ_id // many-to-one
+Ref: user_championship.id_user > users.iduser //many-to-one
+Ref: bet_payment.betId > user_bet.userBetId //many-to-one
+Ref: bet_payment.paymentId > payment.paymentId //many-to-one
