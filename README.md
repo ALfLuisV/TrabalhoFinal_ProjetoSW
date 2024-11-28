@@ -65,5 +65,7 @@ Diagrama implementando os casos de uso de compra de ingresso, associação de jo
 ![diagramaDESequencia](Diagramas/DiagramaSequencia/diagrama_sequencia.png)
 
 
+## Diagrama Lógico
+![diagramaLogico](Diagramas/DiagramaLogico/DBDiagram.png)
 
 
