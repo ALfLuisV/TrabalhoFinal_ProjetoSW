@@ -1,0 +1,86 @@
+@startuml
+class atlete{
+ -sexo : char
+ -onATeam : booelan
+ -team : integer
+ -height: float
+}
+
+class team {
+-name : string
+}
+
+class championship {
+  -startDate : date
+  -endDate :date
+  -champName :string
+  -modality :string
+  -winner : team
+}
+
+class match {
+-championship : championship 
+-team1 :team 
+-team2 :team 
+-team1_points :integer
+-team2_poins : integer
+-matchDate :dateTime
+-matchLocal :stadium 
+-status :string
+}
+
+class stadium {
+  -name :string
+  -idteam : team
+  -city :string
+}
+
+class ticket {
+  -match :match
+  -ticketCode : integer
+  -user : users
+}
+
+class usuario{
+  -name string
+  -bDate datetime
+  -cpf string
+  -email string
+  -senha string
+}
+
+class users {
+
+}
+
+class bet {
+  -match : match
+  -odd : float
+}
+
+class payment {
+  -value : float 
+  -date : datetime
+  -status : boolean
+}
+
+class performance {
+  -id_atleta : atlete
+  -id_match :match
+  -points :integer
+  -cards :integer
+  -minutesPlayed : integer
+}
+
+usuario <|-- atlete
+usuario <|-- users
+championship "1" *-- "*" match : belong
+team "2" <-- "1" match: play
+stadium "1" *-- "*" match : where
+atlete "1" -- "*" performance : from 
+match "1" -- "*" performance : where
+match "1" o-- "*" ticket : belongs
+bet "1" --- "*" payment
+bet "*" -- "*" users
+
+@enduml
