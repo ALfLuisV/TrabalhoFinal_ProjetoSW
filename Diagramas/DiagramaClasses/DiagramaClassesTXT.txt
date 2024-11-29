@@ -4,10 +4,13 @@ class atlete{
  -onATeam : booelan
  -team : integer
  -height: float
+ + viewPerformance(match: match) : void
 }
 
 class team {
 -name : string
+ + getIntoChampionship(championship: championship) : void
+ + setPlayer(atlete: atlete) : void
 }
 
 class championship {
@@ -16,6 +19,8 @@ class championship {
   -champName :string
   -modality :string
   -winner : team
++ setMatchs(): matchs[]
++ setWinner(): Team
 }
 
 class match {
@@ -27,18 +32,24 @@ class match {
 -matchDate :dateTime
 -matchLocal :stadium 
 -status :string
++ finishMatch(): void
++ changeDate(date: date) : void
++ changeLocal(stadium: stadium): void
 }
 
 class stadium {
   -name :string
   -idteam : team
   -city :string
++ isAvaliable(date: date): boolean
 }
 
 class ticket {
   -match :match
   -ticketCode : integer
   -user : users
++ renderTicketCode(): integer
++ estornarTicket(): boolean
 }
 
 class usuario{
@@ -50,18 +61,24 @@ class usuario{
 }
 
 class users {
-
++getTickets(): ticket
++makeABet(): bet
++ followChampionship(): void
++ followTeam(): void
 }
 
 class bet {
   -match : match
   -odd : float
++ isGreen(): boolean
++ payGreen(): payment
 }
 
 class payment {
   -value : float 
   -date : datetime
   -status : boolean
++ setFinancialTransation(): boolean
 }
 
 class performance {
@@ -70,6 +87,7 @@ class performance {
   -points :integer
   -cards :integer
   -minutesPlayed : integer
++ getStats(): string
 }
 
 usuario <|-- atlete
