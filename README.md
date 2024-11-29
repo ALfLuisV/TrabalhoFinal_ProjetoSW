@@ -64,6 +64,8 @@ O sistema visa atender às necessidades de organização e acompanhamento de com
 Diagrama implementando os casos de uso de compra de ingresso, associação de jogador a equipe, e aposta na plataforma
 ![diagramaDESequencia](Diagramas/DiagramaSequencia/diagrama_sequencia.png)
 
+## Diagrama de Classes
+![diagramadeClasses](Diagramas/DiagramaClasses/diagramaClasses.png)
 
 ## Diagrama Lógico
 ![diagramaLogico](Diagramas/DiagramaLogico/DBDiagram.png)
