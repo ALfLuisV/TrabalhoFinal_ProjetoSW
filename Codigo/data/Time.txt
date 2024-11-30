@@ -1,0 +1,26 @@
+1;Vasco
+2;Flamengo
+3;Bauru
+4;Sao Paulo
+5;Caxias do sul
+6;Corinthias
+7;Fortaleza
+8;Botafofo
+9;Minas
+10;Paulistano
+11;Unifacisa
+12;Red
+13;São caetano
+14;Bravus
+15;Hunters
+16;Atomics
+17;Ballers
+18;Cruzeiro
+19;Pic
+20;Puc
+21;Ufmg
+22;Palmeiras
+23;Gremio
+24;Internacional
+25;PUCRS
+26;New Castle FC
