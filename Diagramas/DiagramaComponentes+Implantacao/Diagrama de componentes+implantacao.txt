@@ -1,0 +1,47 @@
+@startuml
+
+node "Servidor" {
+    package "Controllers" {
+        component "CampeonatoController" as CampeonatoController
+        component "PartidaController" as PartidaController
+        component "TimeController" as TimeController
+    }
+
+    package "DAOs" {
+        component "CampeonatoDAO" as CampeonatoDAO
+        component "PartidaDAO" as PartidaDAO
+        component "TimeDAO" as TimeDAO
+    }
+
+    package "Models" {
+        component "Campeonato" as Campeonato
+        component "Partida" as Partida
+        component "Time" as Time
+    }
+
+    component "Main" as Main
+}
+
+node "Cliente" {
+    component "CLI" as CLI
+}
+
+CLI --> Main
+
+Main --> CampeonatoController
+Main --> PartidaController
+Main --> TimeController
+
+CampeonatoController --> CampeonatoDAO
+PartidaController --> PartidaDAO
+TimeController --> TimeDAO
+
+CampeonatoController --> Campeonato
+PartidaController --> Partida
+TimeController --> Time
+
+CampeonatoController --> CLI
+PartidaController --> CLI
+TimeController --> CLI
+
+@enduml

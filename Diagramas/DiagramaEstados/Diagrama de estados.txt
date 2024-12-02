@@ -1,0 +1,16 @@
+@startuml
+
+[*] --> CampeonatoCriado : Campeonato criado
+CampeonatoCriado --> TimeAdicionado : Time adicionado
+TimeAdicionado --> PartidaAgendada : Partida agendada
+PartidaAgendada --> PartidaEmAndamento : Partida iniciada
+PartidaEmAndamento --> PartidaPausada : Partida pausada
+PartidaPausada --> PartidaEmAndamento : Partida retomada
+PartidaEmAndamento --> PartidaFinalizada : Partida finalizada
+PartidaAgendada --> PartidaCancelada : Partida cancelada
+PartidaEmAndamento --> PartidaCancelada : Partida cancelada
+PartidaFinalizada --> CampeonatoArquivado : Campeonato arquivado
+PartidaCancelada --> [*]
+CampeonatoArquivado --> [*]
+
+@enduml
