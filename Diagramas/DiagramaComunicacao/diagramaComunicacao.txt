@@ -1,0 +1,60 @@
+@startuml
+
+actor       Torcedor as t
+actor gestor as g
+actor Jogador as j
+
+participant SistemaDeCompras as sis
+participant SistemaDePagamentos as pay
+participant SistemaDeNotificacao as not
+participant SistemaDeApostas as ap
+
+database    BancoDeDados as bd
+
+
+== Comprar Ingresso ==
+t -> sis: 1.1 comprarIngresso
+sis -> bd: 1.2 verificarDisponibilidade
+bd --> sis: 1.3 ingressosDisponiveis
+sis --> t: 1.4 disponibilidade
+t -> sis: 1.5 realizarPagamento
+sis -> pay: 1.6 validarPagamento
+pay --> sis: 1.7 pagamentoConfirmado
+sis -> bd: 1.8 registrarVenda
+sis --> t: 1.9 confirmarCompra
+sis -> t: 1.10 gerarIngresso
+
+
+== Associar Jogadores ==
+g -> sis: 2.1 buscarJogadores
+sis -> bd: 2.2 verificarJogadoresDisponiveis
+bd --> sis: 2.3 jogadoresDisponiveis
+sis --> g: 2.4 jogadoresDisponiveis
+g -> sis:2.5 [jogador]associarJogadorAEquipe
+sis -> bd: 2.6 registrarAssociacao
+bd --> sis: 2.7 associacaoConfirmada
+sis --> g: 2.8 associacaoConfirmada
+sis -> not: 2.9 notificarJogador
+not --> j: 2.10 notificarAssociacao
+
+== Realizar  Aposta ==
+t -> ap: 3.1 realizarAposta
+ap -> bd: 3.2 consultarPlacares
+bd --> ap: 3.4 placaresAtuais
+ap-> pay: 3.5 pagarCliente
+pay --> t: 3.6 confirmacaoDePagamento
+ap -> not: 3.7 notificarCliente
+not --> t: 3.8 notificacaoDeResultado
+
+== Realizar Pagamento ==
+sis -> ap : 4.1 verificarApostasVencedoras
+ap -> bd : 4.2 apostasVencedoras
+bd --> ap : 4.3 ListaApostasVencedoras
+ap --> sis : 4.3 ApostasAseremPagas
+sis -> pay : 4.4 pagarApostas [listaApostas]
+pay -> bd : 4.5 getDadosDePagamento [usuario]
+bd --> pay : 4.6 dadosDePagamento 
+pay -> t : 4.7 pagamentoAposta
+
+
+@enduml
