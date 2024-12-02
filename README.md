@@ -67,6 +67,9 @@ Diagrama implementando os casos de uso de compra de ingresso, associação de jo
 ## Diagrama de Classes
 ![diagramadeClasses](Diagramas/DiagramaClasses/diagramaClasses.png)
 
+## Diagrama de Comunicação
+![diagramadeComunicação](Diagramas/DiagramaComunicacao/diagramaDeComunicacao.png)
+
 ## Diagrama Lógico
 ![diagramaLogico](Diagramas/DiagramaLogico/DBDiagram.png)
 
